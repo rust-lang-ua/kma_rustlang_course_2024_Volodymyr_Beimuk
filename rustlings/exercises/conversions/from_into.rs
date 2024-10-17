@@ -46,12 +46,12 @@ impl From<&str> for Person {
             return Person::default();
         }
 
-        let name = parts[0].trim();
+        let name = parts[0];
         if name.is_empty() {
             return Person::default();
         }
 
-        if let Ok(age) = parts[1].trim().parse::<usize>() {
+        if let Ok(age) = parts[1].parse::<usize>() {
             Person {
                 name: name.to_string(),
                 age: age,

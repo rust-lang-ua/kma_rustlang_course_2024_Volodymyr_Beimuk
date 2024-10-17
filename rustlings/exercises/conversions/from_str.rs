@@ -50,12 +50,12 @@ impl FromStr for Person {
             return Err(ParsePersonError::BadLen);
         }
 
-        let name = parts[0].trim();
+        let name = parts[0];
         if name.is_empty() {
             return Err(ParsePersonError::NoName);
         }
 
-        match parts[1].trim().parse::<usize>() {
+        match parts[1].parse::<usize>() {
             Ok(age) => Ok(Person {
                 name: name.to_string(),
                 age: age,
